@@ -12,7 +12,7 @@ use App\Http\Controllers\ApplyController;
 use App\Http\Requests\ApplyRequest;
 use App\Http\Requests\PostRequest;
 use App\Services\TwitchService;
-use App\Services\YoutubeService;
+use App\Services\YouTubeService;
 
 
 class PostController extends Controller
