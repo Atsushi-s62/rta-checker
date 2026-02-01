@@ -1,0 +1,109 @@
+body {
+    margin: 0 0 0 30px;
+    padding: 0;
+}
+
+/* 管理画面-編集 posts.edit.php */
+
+#pending {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 20px 0 ;
+}
+
+#pending > a {
+    font-size: 16px;
+    font-weight: bold;
+    background: #FF8C00;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 0 8px gray;
+    
+}
+
+table {
+    border-collapse: collapse;
+    width: auto;
+}
+
+.caption{
+    position: sticky;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    padding: 20px;
+    background: white;
+}
+
+/* table th {
+    border: 1px solid black;
+    padding: 20px;
+} */
+
+table td {
+    border: 1px solid black;
+    padding: 20px;
+    font-weight: bold;
+}
+
+#edit {
+    width: 60px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #87CEEB;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#delete {
+    width: 60px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #FA8072;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 更新画面 editId.php */
+
+#name_form, #twitch_form, #youtube_form, #x_id{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+label {
+    padding: 0 0 5px 0;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+}
+
+#update {
+    margin-top: 40px;
+    width: 120px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+

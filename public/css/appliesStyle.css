@@ -1,0 +1,90 @@
+/* applies/index.phpの設定 */
+
+body {
+    margin: 0 0 0 30px;
+    padding: 0;
+}
+
+#name_form, #twitch_form, #youtube_form, #x_id{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+label {
+    padding: 0 0 5px 0;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+
+
+input[type="text"] {
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+}
+
+#apply_button {
+    margin-top: 40px;
+    width: 120px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+
+/* applies/judge.phpのスタイル */
+
+#judge_table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+}
+
+table th {
+    border: 1px solid black;
+    padding: 20px;
+    
+}
+
+table td {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#ok {
+    width: 60px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #87CEEB;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#ok:hover {
+    opacity: 0.6;
+}
+
+#ng {
+    width: 60px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #FA8072;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#ng:hover {
+    opacity: 0.6;
+}
+
+
