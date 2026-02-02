@@ -39,7 +39,7 @@ class PostController extends Controller
         $joinStreamData = [];
         $rtaStreamData = [];
         $notRtaStreamData = [];
-        $keyWords = ['RTA', 'speedrun'];
+        $keyWords = ['RTA', 'speedrun', 'SpeedRun'];
 
         // dd($twitchStreams);
 
