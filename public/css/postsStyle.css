@@ -23,24 +23,25 @@ header > h1 {
     display: inline-flex;
     padding: 10px;
     margin: 0 0 0 auto;
+}
+
+#apply > a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
     font-size: 16px;
+    font-weight: bold;
     background: skyblue;
     border: 1px solid black;
     box-shadow: 0 0 8px gray;
     border-radius: 8px;
 }
 
-#apply > a {
-    text-decoration: none;
-}
-
 #rta-list {
-    /* display: inline-block; */
     display: flex;
     flex-direction: column;
     border: 1px solid red;
     margin: 20px 0 0 20px;
-    /* background: skyblue; */
 }
 
 #rta-list > p {
@@ -54,11 +55,9 @@ header > h1 {
     height: 40px;
     line-height: 40px;
     text-align: center;
-
 }
 
 #others {
-    /* display: inline-block; */
     display: flex;
     flex-direction: column;
     border: 1px solid red;
@@ -105,8 +104,6 @@ header > h1 {
 .thumb {
     grid-column: 1 / 2; 
     grid-row: 1 / 4;
-    /* width: 200px;
-    height: 150px; */
     border: 1px solid red;
 }
 
@@ -151,13 +148,11 @@ header > h1 {
 .streamer {
     grid-column: 3 / 5;
     grid-row: 1 / 2;
-    border: 1px solid purple;
 }
 
 .topic {
     grid-column: 3 / 5;
     grid-row: 2 / 3;
-    border: 1px solid orange;
     font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
@@ -166,7 +161,6 @@ header > h1 {
 .time {
     grid-column: 5 / 6;
     grid-row: 1 / 2;
-    border: 1px solid black;
     text-align: right;
     padding-right: 5px;
 }
@@ -182,17 +176,13 @@ header > h1 {
 .viewers {
     grid-column: 5 / 6;
     grid-row: 2 / 3;
-    border: 1px solid yellow;
     text-align: right;
     padding-right: 5px;
 }
 
-
-
 .category {
     grid-column: 3 / 5;
     grid-row: 3 / 4;
-    border: 1px solid blue;
     font-size: 12px;
     line-height: 30px;
 }
@@ -200,7 +190,6 @@ header > h1 {
 .x_id {
     grid-column: 5 / 6;
     grid-row: 3 / 4;
-    border: 1px solid green;
     text-align: right;
     padding-right: 5px;
 }
@@ -208,8 +197,7 @@ header > h1 {
 .x_id > a > img {
     width: 20px;
     height: 20px;
-    vertical-align: -5px;
-    
+    vertical-align: -5px;    
 }
 
 .log {
