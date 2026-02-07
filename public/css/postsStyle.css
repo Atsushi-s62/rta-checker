@@ -59,8 +59,6 @@ header > h1 {
 #others {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
-    
     margin: 40px 0 0 20px;
 }
 
