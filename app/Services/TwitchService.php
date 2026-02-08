@@ -38,11 +38,6 @@ class TwitchService
     public static function getStreams(array $logins): array
     {
         
-        // dd($logins);
-        // $loginsColumn = array_column($logins, 'user_login');
-
-        // dd($loginsColumn);
-        
             $response = Http::withHeaders([
                 'Client-ID' => config('services.twitch.client_id'),
                 'Authorization' => 'Bearer ' . self::getAccessToken(),
@@ -53,11 +48,7 @@ class TwitchService
         
             assert($response instanceof Response);
 
-            // $data = $response->json('data') ?? [];
-            // $result = array_merge($result, $data);
-            // return collect($response->json())
 
-        // dd($response->json('data'));
         $result = collect($response->json('data'))->mapWithKeys(function ($item) {
             return [
                 $item['user_login'] => [
@@ -84,11 +75,7 @@ class TwitchService
     public static function getUsers(array $userLogins): array
     {
 
-        // $userLoginsColumn = array_column($userLogins, 'user_login');
-        // dd($userLoginsColumn);
 
-            // dd($userLogins);
-            // dd($chunk);
             $response = Http::withHeaders([
                 'Client-ID' => config('services.twitch.client_id'),
                 'Authorization' => 'Bearer ' . self::getAccessToken(),
@@ -98,12 +85,9 @@ class TwitchService
             ]);
 
             assert($response instanceof Response);
-            // dd($response->json('data'));
-            // dd($userLogins);
 
-            // $channelIcon = data_get($response->json(),);
             $channelIcon = collect($response->json('data'))->mapWithKeys(function ($data) {
-                // dd($data);
+
                 return [
                     $data['login'] => [
                         'user_login' => $data['login'],
@@ -111,13 +95,6 @@ class TwitchService
                     ],
                 ];
             })->toArray();
-
-            // dd($userLogins);
-            // dd($channelIcon);
-
-            // $result = array_merge_recursive($userLogins, $channelIcon);
-
-            // dd($result);
 
         return $channelIcon;
     }
@@ -131,7 +108,6 @@ class TwitchService
 
         foreach(array_chunk($twitchIds, 100) as $twitchIdsChunk) {
 
-        // $getUsersIcon = self::getUsers($twitchIdsChunk);
         // 15分ごとに更新
         $getUsersIcon = Cache::remember(
             'twitch_users_' . md5(implode(',', $twitchIdsChunk)),
@@ -139,16 +115,8 @@ class TwitchService
             fn() => self::getUsers($twitchIdsChunk)
         );
 
-        // dd($getUsersIcon);
-
         $getUserIconLogin = array_column($getUsersIcon, 'user_login');
 
-        // dd($getUserIconLogin);
-
-        // $getStreamsKey = self::getStreams($twitchIdsChunk);
-
-
-        // $getStreamsKey = self::getStreams($getUsersIcon);
 
         // 15分毎に更新
         $getStreamsKey = Cache::remember(
@@ -157,17 +125,6 @@ class TwitchService
             fn() => self::getStreams($getUserIconLogin)
         );
 
-        // $getStreamsKey = Cache::remember(
-        //     'twitch_streams_' . md5(implode(',', $twitchIdsChunk))
-        // );
-
-
-        // $getUsersIcon = self::getUsers($getStreamsKey);
-        
-
-        // $result = $getUsersIcon;
-
-        // dd($getStreamsKey);
 
         $result = array_merge_recursive($getStreamsKey, $getUsersIcon);
 
@@ -176,21 +133,11 @@ class TwitchService
 
         });
 
-        
-        // $result = array_merge($getStreamsKey, $getUsersIcon);
-
-        // dd($result);
-        // $result = array_merge($result, $getUsersIcon);
 
         }
-
-        // dd($result);
-        // dd($liveList);
 
         return $liveList;
 
     }
-
-
 
 }
